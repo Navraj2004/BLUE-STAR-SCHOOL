@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Star School Singrijan</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+
+  <div class="bg-animation" id="bgAnimation">
+  </div>
+<!-- Remove the inline style from your nav element -->
+<nav id="nav">
+  <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+  <a href="#vision"><i class="fas fa-eye"></i> Vision</a>
+  <a href="#objectives"><i class="fas fa-bullseye"></i> Objectives</a>
+  <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+  <header>
+    <h1>
+      <img src="l5.jpg" alt="School Logo" style="border-radius: 50%;">
+      BLUE STAR SCHOOL SINGRIJAN
+    </h1>
+    <p>
+      Dimapur, Nagaland | Established 2003 | Motto: <em>"Knowledge Is Power"</em>
+    </p>
+  </header>
+
+
+  <button class="menu-toggle" id="menuToggle">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+ 
+
+  <div class="slideshow-container">
+    <div class="mySlides active">
+      <img class="slide-img" src="l8.jpg" alt="School Campus">
+      <div class="caption">Welcome to Our Campus</div>
+    </div>
+    <div class="mySlides">
+    <img class="slide-img" src="l4.jpg" alt="Students Learning">
+      <div class="caption">Nurturing Young Minds</div>
+    </div>
+    <div class="mySlides">
+        <img class="slide-img" src="l6.jpg" alt="First Batch">
+      <div class="caption">First Batch Of BSS</div>
+    </div>
+    <div class="mySlides">
+     <img class="slide-img" src="l7.jpg"alt="Sports Events">
+      <div class="caption">Sports Events</div>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2><i class="fas fa-school"></i> About</h2>
+    
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">166</span>
+        <span class="stat-label">Students</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">13</span>
+        <span class="stat-label">Teachers</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">2003</span>
+        <span class="stat-label">Established</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">10</span>
+        <span class="stat-label">Classrooms</span>
+      </div>
+    </div>
+
+    <p>Blue Star School Singrijan (BSSS), located in Dimapur, Nagaland, is a co-educational school established in 2003. It is managed by the Pvt. Unaided and serves students from grades 1 to 8. The school is situated in the Singrijan area of the Dhansiripar block in Dimapur district. It has 166 students and 13 teachers (9 male, 4 female, 4 pre-primary), with English as the medium of instruction.</p>
+    
+    <p>The school has 10 classrooms, 2 non-teaching rooms, and is approachable by an all-weather road. It has private building with barbed wire fencing, electricity, tap water, 1 boys toilet, 1 girls toilet, a playground, 5 functional computers, ramps for disabled, and no library or computer-aided learning lab. Recently, the school felicitated HSLC pass out students during a program held on June 5, 2025. Academic session starts in April.</p>
+  </section>
+
+  <section id="vision">
+    <h2><i class="fas fa-lightbulb"></i> Vision</h2>
+    <p>To provide wholesome education in a conducive environment, to all classes of society, that nurtures values, develops social and leadership skills, enhances experiential learning, and leads to the development of 21st century skills. The school offers opportunities to discover oneself and contribute to society as confident, smart individuals.</p>
+  </section>
+
+  <section id="objectives">
+    <h2><i class="fas fa-target"></i> Objectives</h2>
+    <ol>
+      <li>To provide a safe, secure, and conducive environment where children can enjoy learning, achieve excellence, and become lifelong learners.</li>
+      <li>To provide programs supporting all-round development of the child.</li>
+      <li>To inculcate values in children and enable them to look beyond "me, mine & myself."</li>
+      <li>To develop children into self-directed learners.</li>
+      <li>To imbibe in children the qualities of self-discipline, self-confidence, and leadership.</li>
+      <li>To create awareness and appreciation in children about their rich culture and tradition, while being open to other cultures of the world.</li>
+      <li>To provide learning opportunities and activities that cater to different learning styles.</li>
+      <li>To foster internationalism through a global dimension in the curriculum and interaction with global organizations and institutions.</li>
+      <li>To provide state-of-the-art facilities, infrastructure, and technology to enhance teaching and learning outcomes.</li>
+    </ol>
+  </section>
+
+ <section id="contact">
+    <h2><i class="fas fa-paper-plane"></i> Contact</h2>
+    <div class="contact-form">
+ <form action="https://formspree.io/f/xdkzlavl" method="POST">
+  <!-- Name field (optional but recommended) -->
+  <label>
+    Your name:
+    <input type="text" name="name" required>
+  </label>
+  
+  <!-- Email field - MUST use "_replyto" for Formspree -->
+  <label>
+    Your email:
+    <input type="email" name="_replyto" required>
+  </label>
+  
+  <!-- Message field -->
+  <label>
+    Your message:
+    <textarea name="message" required></textarea>
+  </label>
+  
+  <!-- Hidden fields for better functionality -->
+  <input type="text" name="_gotcha" style="display:none"> <!-- Anti-spam -->
+  <input type="hidden" name="_subject" value="New message from website"> <!-- Custom subject -->
+  
+  <button type="submit">Send</button>
+</form>
+      
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>bluestarschool.edu.in</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+91-8974439487</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Near Local Ground, Singrijan Village, Dimapur, Nagaland</span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-facebook"></i>
+          <a href="https://www.facebook.com/groups/3329433597313578/?ref=share&mibextid=NSMWBT" target="_blank">Visit our Facebook Page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Blue Star School Singrijan. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Create animated background particles
+    function createParticles() {
+      const container = document.getElementById('bgAnimation');
+      const particleCount = 12;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 5 + 12) + 's';
+        
+        container.appendChild(particle);
+      }
+    }
+
+    // Hamburger menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    const hamburger = document.getElementById('hamburger');
+
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Close mobile menu
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+        
+        // Smooth scroll functionality
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+    });
+
+    // Enhanced slideshow
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("mySlides");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+      }
+      slideIndex++;
+      if (slideIndex >= slides.length) {
+        slideIndex = 0;
+      }
+      slides[slideIndex].classList.add("active");
+      setTimeout(showSlides, 4000);
+    }
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your message! We will get back to you soon.');
+      this.reset();
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      showSlides();
+    });
+  </script>
+</body>
+</html>

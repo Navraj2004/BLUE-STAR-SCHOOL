@@ -115,16 +115,19 @@
     .school-logo {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #ff6f61, #de4d4d);
-      border-radius: 50%;
       margin: 0 auto 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
-      font-weight: 800;
-      color: white;
       animation: pulse 2s ease-in-out infinite;
+    }
+
+    .school-logo img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 111, 97, 0.4);
       box-shadow: 0 10px 30px rgba(255, 111, 97, 0.4);
     }
 
@@ -222,6 +225,7 @@
       overflow: hidden;
       box-shadow: 0 8px 25px rgba(255, 111, 97, 0.3);
       animation: fadeInDelay 3s ease-out;
+      touch-action: manipulation; /* Improves touch responsiveness */
     }
 
     .enter-button.secondary {
@@ -296,8 +300,7 @@
       backdrop-filter: blur(10px);
       color: #b0bec5;
       text-align: center;
-      padding: 20px;
-      position: fixed;
+      padding: 15px;
       width: 100%;
       bottom: 0;
       animation: slideInBottom 2s ease-out;
@@ -315,64 +318,116 @@
     /* Mobile responsiveness */
     @media (max-width: 768px) {
       .intro-container {
-        padding: 40px 30px;
-        margin: 15px;
+        padding: 30px 20px;
+        margin: 10px;
         border-radius: 20px;
       }
       
       h1 {
-        font-size: 2.2em;
+        font-size: 2em;
         letter-spacing: 2px;
       }
       
+      .subtitle {
+        font-size: 1em;
+      }
+      
       .description {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      
+      .motto {
         font-size: 16px;
+        padding: 12px 25px;
       }
       
       .buttons-container {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
       }
       
       .enter-button {
-        padding: 15px 30px;
-        font-size: 15px;
+        padding: 14px 30px;
+        font-size: 14px;
         width: 100%;
-        max-width: 280px;
+        max-width: 250px;
+        min-height: 48px; /* Touch-friendly size */
       }
       
       .stats-container {
         gap: 20px;
+        flex-direction: column;
       }
       
       .stat-number {
         font-size: 2em;
       }
-    }
-
-    @media (max-width: 480px) {
-      .intro-container {
-        padding: 30px 20px;
-      }
       
-      h1 {
-        font-size: 1.8em;
+      .stat-label {
+        font-size: 12px;
       }
       
       .school-logo {
         width: 60px;
         height: 60px;
-        font-size: 28px;
+      }
+      
+      footer {
+        font-size: 12px;
+        padding: 10px;
       }
     }
-    .school-logo img {
-  width: 80px;           /* Adjust as needed */
-  height: 80px;
-  border-radius: 50%;    /* Makes it round */
-  object-fit: cover;     /* Ensures the image fits nicely */
-  border: 2px solid #000; /* Optional: adds a border */
-}
 
+    @media (max-width: 480px) {
+      .intro-container {
+        padding: 20px 15px;
+        margin: 5px;
+      }
+      
+      h1 {
+        font-size: 1.6em;
+        letter-spacing: 1px;
+      }
+      
+      .subtitle {
+        font-size: 0.9em;
+      }
+      
+      .description {
+        font-size: 13px;
+      }
+      
+      .motto {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+      
+      .school-logo {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .enter-button {
+        padding: 12px 25px;
+        font-size: 13px;
+        max-width: 200px;
+      }
+      
+      .stat-number {
+        font-size: 1.8em;
+      }
+      
+      footer {
+        font-size: 11px;
+      }
+      
+      .particle {
+        width: 3px;
+        height: 3px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -382,7 +437,9 @@
 
   <div class="main-container">
     <div class="intro-container">
-      <div class="school-logo">  <img src="l5.jpg" alt="School Logo"></div>
+      <div class="school-logo">
+        <img src="l5.jpg" alt="School Logo">
+      </div>
       <h1>Blue Star School</h1>
       <div class="subtitle">Singrijan, Dimapur • Est. 2003</div>
       
@@ -422,8 +479,7 @@
     // Create floating particles
     function createParticles() {
       const particlesContainer = document.querySelector('.particles');
-      const particleCount = 50;
-      
+      const particleCount = window.innerWidth <= 768 ? 20 : 50; // Reduce particles on mobile
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
@@ -444,17 +500,6 @@
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
-      });
-    });
-
-    // Add interactive hover effects
-    document.querySelectorAll('.enter-button').forEach(button => {
-      button.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px) scale(1.05)';
-      });
-      
-      button.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
       });
     });
   </script>

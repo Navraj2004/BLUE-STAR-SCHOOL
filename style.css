@@ -963,4 +963,9 @@ ol li::before {
   .developer-info {
     font-size: 11px;
   }
-}
+} .highlight-name {
+      color: #ffd54f;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(255, 213, 79, 0.6);
+      transition: text-shadow 0.3s ease;
+    }

@@ -3,662 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to BLUE STAR SCHOOL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      line-height: 1.6;
-      background: linear-gradient(135deg, rgba(15, 15, 35, 0.7), rgba(26, 26, 46, 0.7)), 
-                  url('blue.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Animated background particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(255, 111, 97, 0.6);
-      border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .particle:nth-child(odd) {
-      background: rgba(100, 200, 255, 0.4);
-      animation-duration: 8s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      50% { transform: translateY(-100vh) rotate(180deg); }
-    }
-
-    /* Main container */
-    .main-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .intro-container {
-      text-align: center;
-      padding: 60px 50px;
-      background: rgba(26, 26, 46, 0.9);
-      backdrop-filter: blur(20px);
-      border-radius: 30px;
-      box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.5),
-        0 0 100px rgba(255, 111, 97, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      animation: slideInUp 1.2s ease-out;
-      max-width: 800px;
-      margin: 20px;
-      border: 1px solid rgba(255, 111, 97, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .intro-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 111, 97, 0.1), transparent);
-      animation: shimmer 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    @keyframes slideInUp {
-      from { 
-        transform: translateY(60px); 
-        opacity: 0; 
-      }
-      to { 
-        transform: translateY(0); 
-        opacity: 1; }
-    }
-
-    .school-logo {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .school-logo img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255, 111, 97, 0.4);
-      box-shadow: 0 10px 30px rgba(255, 111, 97, 0.4);
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    h1 {
-      color: #ff6f61;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-      font-size: 3.2em;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ff6f61, #ff8a80, #de4d4d);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: textGlow 3s ease-in-out infinite alternate;
-      text-shadow: 0 0 30px rgba(255, 111, 97, 0.3);
-    }
-
-    @keyframes textGlow {
-      from { 
-        filter: brightness(1);
-        text-shadow: 0 0 20px rgba(255, 111, 97, 0.3);
-      }
-      to { 
-        filter: brightness(1.2);
-        text-shadow: 0 0 40px rgba(255, 111, 97, 0.6);
-      }
-    }
-
-    .subtitle {
-      font-size: 1.2em;
-      color: #64b5f6;
-      margin-bottom: 30px;
-      font-weight: 300;
-      animation: fadeInDelay 1.5s ease-out;
-    }
-
-    @keyframes fadeInDelay {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .description {
-      font-size: 18px;
-      margin-bottom: 40px;
-      color: #e8eaf6;
-      line-height: 1.9;
-      animation: fadeInDelay 2s ease-out;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .motto {
-      font-size: 20px;
-      color: #ffd54f;
-      font-weight: 600;
-      margin: 30px 0;
-      padding: 15px 30px;
-      border: 2px solid rgba(255, 213, 79, 0.3);
-      border-radius: 50px;
-      display: inline-block;
-      background: rgba(255, 213, 79, 0.1);
-      animation: fadeInDelay 2.5s ease-out;
-    }
-
-    /* Enhanced CTA section */
-    .cta-section {
-      margin-top: 50px;
-      animation: fadeInDelay 3s ease-out;
-    }
-
-    .cta-title {
-      font-size: 22px;
-      color: #ffffff;
-      margin-bottom: 15px;
-      font-weight: 600;
-      animation: bounce 2s ease-in-out infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
-    }
-
-    .cta-subtitle {
-      font-size: 16px;
-      color: #b0bec5;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-
-    .buttons-container {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 25px;
-    }
-
-    .enter-button {
-      background: linear-gradient(135deg, #ff6f61, #de4d4d, #d32f2f);
-      color: #ffffff;
-      padding: 20px 45px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(255, 111, 97, 0.4);
-      animation: buttonPulse 3s ease-in-out infinite;
-      touch-action: manipulation;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .enter-button.secondary {
-      background: linear-gradient(135deg, #64b5f6, #42a5f5, #1e88e5);
-      box-shadow: 0 10px 30px rgba(100, 181, 246, 0.4);
-      animation-delay: 0.5s;
-    }
-
-    @keyframes buttonPulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 111, 97, 0.4); }
-      50% { transform: scale(1.02); box-shadow: 0 15px 40px rgba(255, 111, 97, 0.6); }
-    }
-
-    .enter-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transition: 0.6s;
-    }
-
-    .enter-button:hover::before {
-      left: 100%;
-    }
-
-    .enter-button:hover {
-      transform: translateY(-8px) scale(1.08);
-      box-shadow: 0 20px 50px rgba(255, 111, 97, 0.6);
-      animation: none;
-    }
-
-    .enter-button.secondary:hover {
-      box-shadow: 0 20px 50px rgba(100, 181, 246, 0.6);
-    }
-
-    .enter-button::after {
-      content: '→';
-      font-size: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .enter-button:hover::after {
-      transform: translateX(8px);
-    }
-
-    /* Glowing click indicator */
-    .click-indicator {
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6);
-      animation: clickGlow 2s ease-in-out infinite;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    @keyframes clickGlow {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 1; color: #ffd54f; }
-    }
-
-    /* Stats section */
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin: 50px 0 30px;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      text-align: center;
-      animation: fadeInDelay 3.5s ease-out;
-    }
-
-    .stat-number {
-      font-size: 2.5em;
-      font-weight: 800;
-      color: #ff6f61;
-      display: block;
-    }
-
-    .stat-label {
-      font-size: 14px;
-      color: #b0bec5;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    footer {
-      background: linear-gradient(90deg, rgba(15, 28, 44, 0.95), rgba(26, 60, 94, 0.95));
-      backdrop-filter: blur(10px);
-      color: #b0bec5;
-      text-align: center;
-      padding: 15px;
-      width: 100%;
-      bottom: 0;
-      animation: slideInBottom 2s ease-out;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-      font-size: 14px;
-      z-index: 10;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @keyframes slideInBottom {
-      from { transform: translateY(100%); }
-      to { transform: translateY(0); }
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .intro-container {
-        padding: 30px 20px;
-        margin: 10px;
-        border-radius: 20px;
-      }
-      
-      h1 {
-        font-size: 2em;
-        letter-spacing: 2px;
-      }
-      
-      .subtitle {
-        font-size: 1em;
-      }
-      
-      .description {
-        font-size: 14px;
-        line-height: 1.7;
-      }
-      
-      .motto {
-        font-size: 16px;
-        padding: 12px 25px;
-      }
-
-      .cta-title {
-        font-size: 18px;
-      }
-
-      .cta-subtitle {
-        font-size: 14px;
-      }
-      
-      .buttons-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-      }
-      
-      .enter-button {
-        padding: 16px 35px;
-        font-size: 16px;
-        width: 100%;
-        max-width: 280px;
-        min-height: 50px;
-      }
-      
-      .stats-container {
-        gap: 20px;
-        flex-direction: column;
-      }
-      
-      .stat-number {
-        font-size: 2em;
-      }
-      
-      .stat-label {
-        font-size: 12px;
-      }
-      
-      .school-logo {
-        width: 60px;
-        height: 60px;
-      }
-      
-      footer {
-        font-size: 12px;
-        padding: 10px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .intro-container {
-        padding: 20px 15px;
-        margin: 5px;
-      }
-      
-      h1 {
-        font-size: 1.6em;
-        letter-spacing: 1px;
-      }
-      
-      .subtitle {
-        font-size: 0.9em;
-      }
-      
-      .description {
-        font-size: 13px;
-      }
-      
-      .motto {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      .cta-title {
-        font-size: 16px;
-      }
-
-      .cta-subtitle {
-        font-size: 13px;
-      }
-      
-      .school-logo {
-        width: 50px;
-        height: 50px;
-      }
-      
-      .enter-button {
-        padding: 14px 30px;
-        font-size: 14px;
-        max-width: 220px;
-      }
-      
-      .stat-number {
-        font-size: 1.8em;
-      }
-      
-      footer {
-        font-size: 11px;
-      }
-      
-      .particle {
-        width: 3px;
-        height: 3px;
-      }
-    }
-    .developer-info {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #b0bec5;
-      font-weight: 400;
-    }
-
-    .portfolio-link {
-      color: #ff6f61;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .portfolio-link:hover {
-      color: #ffd54f;
-      text-shadow: 0 0 10px rgba(255, 213, 79, 0.6);
-    }
-
-    .highlight-name {
-      color: #ffd54f;
-      font-weight: 700;
-      text-shadow: 0 0 10px rgba(255, 213, 79, 0.6);
-      transition: text-shadow 0.3s ease;
-    }
-
-    .highlight-name:hover {
-      text-shadow: 0 0 15px rgba(255, 213, 79, 0.8);
-    }
-
-    /* Mobile responsiveness for developer info */
-    @media (max-width: 768px) {
-      .developer-info {
-        font-size: 12px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .developer-info {
-        font-size: 11px;
-      }
-    }
-  </style>
+  <title>Blue Star School Singrijan</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="particles">
-    <!-- Particles will be generated by JavaScript -->
-  </div>
+  <div class="bg-animation" id="bgAnimation"></div>
 
-  <div class="main-container">
-    <div class="intro-container">
-      <div class="school-logo">
-        <img src="l5.jpg" alt="School Logo">
+  <nav id="nav">
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#vision"><i class="fas fa-eye"></i> Vision</a>
+    <a href="#objectives"><i class="fas fa-bullseye"></i> Objectives</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <header>
+    <h1>
+      <img src="l5.jpg" alt="School Logo" style="border-radius: 50%;">
+      BLUE STAR SCHOOL SINGRIJAN
+    </h1>
+    <p>
+      Dimapur, Nagaland | Established 2003 | Motto: <em>"Knowledge Is Power"</em>
+    </p>
+  </header>
+
+  <button class="menu-toggle" id="menuToggle">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <div class="slideshow-wrapper">
+  <div class="slideshow-container slideshow-container-left">
+    <div class="slides-track left-track">
+      <div class="mySlides"><img class="slide-img" src="l4.jpg" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l6.jpg" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l7.jpg" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l8.jpg" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l9.png" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l10.png" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l11.jpg" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l12.jpg" alt="School event"></div>
+      <div class="mySlides"><img class="slide-img" src="l13.jpg" alt="School event"></div>
+     </div>
+  </div>
+</div>
+
+  <section id="about">
+    <h2><i class="fas fa-school"></i> About</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">300+</span>
+        <span class="stat-label">Students</span>
       </div>
-      <h1>Blue Star School</h1>
-      <div class="subtitle">Singrijan, Dimapur • Est. 2003</div>
-      
-      <p class="description">
-        A premier co-educational institution dedicated to fostering holistic education and nurturing confident, value-driven individuals equipped with 21st-century skills in a safe and inclusive environment.
-      </p>
-      
-      <div class="motto">"Knowledge Is Power"</div>
-      
-      <div class="stats-container">
-        <div class="stat-item">
-          <span class="stat-number">22</span>
-          <span class="stat-label">Years of Excellence</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">21st</span>
-          <span class="stat-label">Century Skills</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">Holistic Education</span>
-        </div>
+      <div class="stat-card">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Teachers</span>
       </div>
-      
-      <div class="cta-section">
-        <div class="cta-title">👇 Choose Your Path</div>
-        <div class="cta-subtitle">Click below to explore our offerings</div>
-        
-        <div class="buttons-container">
-          <a href="index.html" class="enter-button" style="position: relative;">
-            Explore School
-            <div class="click-indicator">Click Here</div>
-          </a>
-          <a href="hostel.html" class="enter-button secondary" style="position: relative;">
-            Hostel Info
-            <div class="click-indicator">Click Here</div>
-          </a>
-        </div>
+      <div class="stat-card">
+        <span class="stat-number">2003</span>
+        <span class="stat-label">Established</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Classrooms</span>
       </div>
     </div>
-  </div>
-<footer>
+    <p>Blue Star School Singrijan (BSSS), located in Dimapur, Nagaland, is a co-educational school established in 2003. It is managed by the Pvt. Unaided and serves students from grades 1 to 8. The school is situated in the Singrijan area of the Dhansiripar block in Dimapur district. It has 300+ students and 20+ teachers  with English as the medium of instruction.</p>
+    <p>The school has 10 classrooms, 2 non-teaching rooms, and is approachable by an all-weather road. It has private building with barbed wire fencing, electricity, tap water, 1 boys toilet, 1 girls toilet, a playground, 5 functional computers, ramps for disabled, and no library or computer-aided learning lab. Recently, the school felicitated HSLC pass out students during a program held on June 5, 2025. Academic session starts in April.</p>
+  </section>
+
+  <section id="vision">
+    <h2><i class="fas fa-lightbulb"></i> Vision</h2>
+    <p>To provide wholesome education in a conducive environment, to all classes of society, that nurtures values, develops social and leadership skills, enhances experiential learning, and leads to the development of 21st century skills. The school offers opportunities to discover oneself and contribute to society as confident, smart individuals.</p>
+  </section>
+
+  <section id="objectives">
+    <h2><i class="fas fa-target"></i> Objectives</h2>
+    <ol>
+      <li>To provide a safe, secure, and conducive environment where children can enjoy learning, achieve excellence, and become lifelong learners.</li>
+      <li>To provide programs supporting all-round development of the child.</li>
+      <li>To inculcate values in children and enable them to look beyond "me, mine & myself."</li>
+      <li>To develop children into self-directed learners.</li>
+      <li>To imbibe in children the qualities of self-discipline, self-confidence, and leadership.</li>
+      <li>To create awareness and appreciation in children about their rich culture and tradition, while being open to other cultures of the world.</li>
+      <li>To provide learning opportunities and activities that cater to different learning styles.</li>
+      <li>To foster internationalism through a global dimension in the curriculum and interaction with global organizations and institutions.</li>
+      <li>To provide state-of-the-art facilities, infrastructure, and technology to enhance teaching and learning outcomes.</li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <h2><i class="fas fa-headset"></i> <span style="color: yellow;">Helpdesk</span></h2>
+    <div class="contact-info">
+     <div class="contact-item">
+  <i class="fas fa-phone"></i>
+  <a href="tel:+918974439487" style="color: yellow; text-decoration: none;">
+    +91-8974439487
+  </a>
+</div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:thapaajay1998@gmail.com" style="color: yellow;">thapaajay1998@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-facebook"></i>
+        <a href="https://www.facebook.com/groups/3329433597313578/?ref=share&mibextid=NSMWBT" target="_blank" style="color: yellow;">Facebook</a>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/blue_star_school_singrijan?igsh=YzljYTk1ODg3Zg==" target="_blank" style="color: yellow;">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+ <footer>
   <p>© 2025 Blue Star School Singrijan, Nagaland. All rights reserved. | Empowering minds, shaping futures.</p>
   <p class="developer-info">Developed by <span class="highlight-name">Navraj Giri</span> | <a href="https://navraj2004.github.io/myportfolio/" target="_blank" class="portfolio-link">Contact Me</a></p>
 </footer>
 
   <script>
-    // Create floating particles
+    // Create animated background particles
     function createParticles() {
-      const particlesContainer = document.querySelector('.particles');
-      const particleCount = window.innerWidth <= 768 ? 20 : 50;
+      const container = document.getElementById('bgAnimation');
+      const particleCount = 12;
+
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
         particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 6 + 's';
-        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-        particlesContainer.appendChild(particle);
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 5 + 12) + 's';
+        container.appendChild(particle);
       }
     }
 
-    // Initialize particles when page loads
-    document.addEventListener('DOMContentLoaded', createParticles);
+    // Hamburger menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    const hamburger = document.getElementById('hamburger');
 
-    // Add smooth scroll effect
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    // Add click feedback
-    document.querySelectorAll('.enter-button').forEach(button => {
-      button.addEventListener('click', function(e) {
-        // Create ripple effect
-        const ripple = document.createElement('span');
-        ripple.style.position = 'absolute';
-        ripple.style.borderRadius = '50%';
-        ripple.style.background = 'rgba(255, 255, 255, 0.6)';
-        ripple.style.transform = 'scale(0)';
-        ripple.style.animation = 'ripple 0.6s linear';
-        ripple.style.left = (e.clientX - e.target.offsetLeft) + 'px';
-        ripple.style.top = (e.clientY - e.target.offsetTop) + 'px';
-        
-        this.appendChild(ripple);
-        
-        setTimeout(() => {
-          ripple.remove();
-        }, 600);
-      });
-    });
-
-    // Add ripple animation
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes ripple {
-        to {
-          transform: scale(4);
-          opacity: 0;
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
       }
-    `;
-    document.head.appendChild(style);
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+    });
+    
   </script>
 </body>
 </html>

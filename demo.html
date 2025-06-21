@@ -500,36 +500,47 @@
       }
     }
     .developer-info {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #b0bec5;
-  font-weight: 400;
-}
+      margin-top: 10px;
+      font-size: 13px;
+      color: #b0bec5;
+      font-weight: 400;
+    }
 
-.portfolio-link {
-  color: #ff6f61;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
+    .portfolio-link {
+      color: #ff6f61;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
 
-.portfolio-link:hover {
-  color: #ffd54f;
-  text-shadow: 0 0 10px rgba(255, 213, 79, 0.6);
-}
+    .portfolio-link:hover {
+      color: #ffd54f;
+      text-shadow: 0 0 10px rgba(255, 213, 79, 0.6);
+    }
 
-/* Mobile responsiveness for developer info */
-@media (max-width: 768px) {
-  .developer-info {
-    font-size: 12px;
-  }
-}
+    .highlight-name {
+      color: #ffd54f;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(255, 213, 79, 0.6);
+      transition: text-shadow 0.3s ease;
+    }
 
-@media (max-width: 480px) {
-  .developer-info {
-    font-size: 11px;
-  }
-}
+    .highlight-name:hover {
+      text-shadow: 0 0 15px rgba(255, 213, 79, 0.8);
+    }
+
+    /* Mobile responsiveness for developer info */
+    @media (max-width: 768px) {
+      .developer-info {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .developer-info {
+        font-size: 11px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -585,7 +596,7 @@
   </div>
 <footer>
   <p>© 2025 Blue Star School Singrijan, Nagaland. All rights reserved. | Empowering minds, shaping futures.</p>
-  <p class="developer-info">Developed by Navraj Giri | <a href="https://navraj2004.github.io/myportfolio/" target="_blank" class="portfolio-link">Contact Me</a></p>
+  <p class="developer-info">Developed by <span class="highlight-name">Navraj Giri</span> | <a href="https://navraj2004.github.io/myportfolio/" target="_blank" class="portfolio-link">Contact Me</a></p>
 </footer>
 
   <script>

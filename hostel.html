@@ -424,6 +424,37 @@
         grid-template-columns: 1fr;
       }
     }
+    .developer-info {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #b0bec5;
+  font-weight: 400;
+}
+
+.portfolio-link {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.portfolio-link:hover {
+  color: #ffd54f;
+  text-shadow: 0 0 10px rgba(255, 213, 79, 0.6);
+}
+
+/* Mobile responsiveness for developer info */
+@media (max-width: 768px) {
+  .developer-info {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .developer-info {
+    font-size: 11px;
+  }
+}
   </style>
 </head>
 <body>
@@ -538,6 +569,7 @@
   <footer>
     <div class="footer-content">
       <p>© 2025 Blue Star School Singrijan. All rights reserved. | Excellence in Education & Residential Care</p>
+      <p class="developer-info">Developed by Navraj Giri | <a href="https://navraj2004.github.io/myportfolio/" target="_blank" class="portfolio-link">Contact Me</a></p>
     </div>
   </footer>
 </body>
